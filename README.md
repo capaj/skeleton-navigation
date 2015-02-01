@@ -14,7 +14,7 @@ To run the app, follow these steps.
   ```shell
   npm install
   ```
-  >**Note:** this installs jspm dependencies too by running ```javascript jspm install ``` as postinstall command
+  >**Note:** this installs jspm dependencies too by running ``` jspm install ``` as postinstall command
 3. Ensure that [Gulp](http://gulpjs.com/) is installed. If you need to install it, use the following command:
 
   ```shell
