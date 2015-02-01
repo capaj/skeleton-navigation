@@ -18,6 +18,9 @@
     "type": "git",
     "url": "http://github.com/aurelia/skeleton-navigation"
   },
+  "scripts": {
+    "postinstall": "jspm install -y"
+  },
   "devDependencies": {
     "aurelia-tools": "git://github.com/aurelia/tools.git",
     "browser-sync": "^1.8.1",
