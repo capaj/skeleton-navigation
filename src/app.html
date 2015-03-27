@@ -1,9 +1,11 @@
 <template>
-  <import from='./nav-bar'></import>
-
-  <nav-bar router.bind="router"></nav-bar>
-
-  <div class="page-host">
-    <router-view></router-view>
+  <div class="sly-wrap">
+    <div class="slidee" if.bind="services">
+      <div repeat.for="service of services" class="channel programme clearfix">
+        <!--<channel-events service="service">-->
+        <!--</channel-events>-->
+        ${service.t} oloool
+      </div>
+    </div>
   </div>
 </template>

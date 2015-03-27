@@ -1,0 +1,97 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+.channel.programme {
+    width: 6000px;
+    height: 62px;
+    background: #fc4332;
+    border-radius: 8px;
+    background: -moz-linear-gradient(left, #fc4332 0%, #7db9e8 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #fc4332), color-stop(100%, #7db9e8));
+    background: -webkit-linear-gradient(left, #fc4332 0%, #7db9e8 100%);
+    background: -o-linear-gradient(left, #fc4332 0%, #7db9e8 100%);
+    background: -ms-linear-gradient(left, #fc4332 0%, #7db9e8 100%);
+    background: linear-gradient(to right, #fc4332 0%, #7db9e8 100%);
+    margin: 4px;
+    display: block;
+}
+
+.channel .logo {
+    width: 40px;
+    height: 62px;
+    margin: 4px 0px;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.channel .logo img {
+    display: inline-block;
+}
+
+.channel .logo .channel-number {
+    color: rgba(255, 255, 255, 1);
+}
+
+.channel h3 {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+    line-height: 36px;
+    margin: 0;
+    padding: 0;
+    float: left;
+}
+
+.service-logos {
+    min-width: 40px;
+}
+
+channel-events{
+    display: flex;
+    font-size: small;
+}
+
+.event{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 20px 10px;
+}
+
+scroll-grid {
+    display: flex;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    overflow: hidden;
+}

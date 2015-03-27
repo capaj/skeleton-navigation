@@ -1,16 +1,28 @@
-import {Router} from 'aurelia-router';
+import $ from 'jquery';
+import sly from 'bskyb-commerce/sly';
+import {HttpClient} from 'aurelia-http-client';
+import '../src/tv-grid.css!';
+
+var apiUrl = 'http://localhost:8777';
 
 export class App {
-  static inject() { return [Router]; }
-  constructor(router) {
-    this.router = router;
-    this.router.configure(config => {
-      config.title = 'Aurelia';
-      config.map([
-        { route: ['','welcome'],  moduleId: 'welcome',      nav: true, title:'Welcome' },
-        { route: 'flickr',        moduleId: 'flickr',       nav: true },
-        { route: 'child-router',  moduleId: 'child-router', nav: true, title:'Child Router' }
-      ]);
+  static inject() { return [HttpClient]; }
+  constructor(http){
+    var self = this;
+
+    http.get(apiUrl + '/hawk/linear/services/4101/1').then(function(res) {
+      self.services = JSON.parse(res.response).services;
+      console.log(self.services);
+    }, function(data, status) {
+      console.warn('ERROR ', data, status);
     });
+
   }
+}
+
+export function configure(aurelia){
+  //aurelia.use.standardConfiguration();    //when uncommented, app.js fails to load
+  //return aurelia.start().then(function (a) {
+  //  return a.setRoot(undefined, document.body);
+  //});
 }
